@@ -82,3 +82,6 @@ Running the pipeline
 3. cd /usr/local/airflow/dags
 4. cat > d_migration.py
 5. chmod 777 d_migration.py
+
+
+The java.jar file contains the utility to read from postgres db in one docker container and insert the records in postgres db running in a different docker container.
