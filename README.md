@@ -53,3 +53,32 @@ services:
 repeat steps 1-5 for target docker container with necessary modifications
 1. to check docker process
 	docker ps
+
+
+Setup Airflow:
+
+1. mkdir pipeline
+2. cd pipeline
+
+3. Fetching docker-compose.yml
+	curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.0.2/docker-compose.yaml'
+
+4. Prepare the environment with necessary files, directories and initialize the database
+	mkdir ./dags ./logs ./plugins
+	echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
+
+5. Run database migration and create first user account
+	docker-compose up airflow-init
+
+	The account created has the login airflow and the password airflow
+
+6. Start all the services
+	docker-compose up
+	
+Running the pipeline
+
+1. create a jar file for java code
+2. docker exec -it <container id> bash (where airflow is running)
+3. cd /usr/local/airflow/dags
+4. cat > d_migration.py
+5. chmod 777 d_migration.py
