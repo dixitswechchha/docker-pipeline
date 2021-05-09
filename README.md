@@ -16,13 +16,13 @@ a. sudo chkconfig docker on
 b. sudo yum install -y git
 c. sudo reboot
 
-4. docker-compose binary download
+4. docker-compose binary download :
 sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 
-5. set proper permission
+5. set proper permission :
 sudo chmod +x /usr/local/bin/docker-compose
 
-6. verify installation
+6. verify installation :
 docker-compose version
 
 
@@ -43,10 +43,10 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
-4. run docker-compose cmd from the same folder where docker-compose.yml 
+4. run docker-compose cmd from the same folder where docker-compose.yml :
 docker-compose up 
 
-5. to check docker process
+5. to check docker process :
 docker ps
 (to stop a container: docker stop 'container_id')
 
@@ -61,13 +61,13 @@ docker ps
 
 Setup Airflow:
 
-1. Use pre-built docker image from public repository
+1. Use pre-built docker image from public repository : 
 docker pull puckel/docker-airflow
 
-2. check the image 
+2. check the image : 
 docker images
 
-3. run the services
+3. run the services : 
 docker run -d -p 8080:8080 puckel/docker-airflow webserver
 
 Interact with docker environment:
