@@ -19,5 +19,6 @@ dag = DAG(
 run_jar_task= BashOperator(
   task_id = 'runjar',
   dag = dag,
-  bash_command = 'java -cp /usr/local/airflow/.jar'
+  bash_command = 'java -cp /usr/local/airflow/docker-postgres.1.0-SNAPSHOT.jar'
   )
+ 
